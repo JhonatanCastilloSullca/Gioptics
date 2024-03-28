@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Caja Diaria Geovial</title>
+    <style>
+
+
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.5rem;
+            font-weight: normal;
+            line-height: .05;
+            color: #151b1e;   
+            writing-mode: tb-rl;
+            size:landscape;
+            width:100%;
+            height:100%;
+            TEXT-TRANSFORM:UPPERCASE;
+        
+        }
+        
+        .table {
+            display: table;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 0.3rem;
+            background-color: transparent;
+            border-collapse: collapse;
+        }
+        .table-bordered {
+            border: 1px solid #c2cfd6;
+        }
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        .table th, .table td {
+            padding: 0.1rem;
+            vertical-align: top;
+            border-top: 1px solid #c2cfd6;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 1px solid #c2cfd6;
+        }
+        .table-bordered thead th, .table-bordered thead td {
+            border-bottom-width: 1px;
+        }
+        .table-bordered th, .table-bordered td {
+            border: 1px solid #c2cfd6;
+        }
+        th, td {
+            display: table-cell;
+            vertical-align: inherit;
+            line-height: 1.6;
+        }
+        th {
+            font-weight: bold;
+            text-align: -internal-center;
+            text-align: left;
+            line-height: 1.6;
+        }
+        tbody {
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+            line-height: 1.6;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .izquierda{
+            float:left;
+        }
+        .derecha{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+                <!-- Ejemplo de tabla Listado -->
+    <div class="card">
+        <div class="row">
+            
+            <div class="card-body">
+                    <div style="overflow-x:auto;">
+                            <div class="table-responsive" >
+                                
+                                <h3> Ingresos</h3>
+                                <table id="egresos" class="table table-bordered table-striped table-sm">
+                                    <thead>
+                                    <tr class="bg-primary">
+                                            <th>Fecha</th>
+                                            <th>Cliente</th>
+                                            <th>Usuario</th>
+                                            <th>Medio de Pago</th>
+                                            <th>Hotel</th>
+                                            <th>Acuenta</th>
+                                            <th>Saldo</th>
+                                            <th>Total</th>
+                                            <th></th>
+                                            <th>Pagar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                                                            
+                                        <tr>
+                                            
+                                            <input type="hidden" class="id_detalle_1" value="1">
+                                                <td class="fecha">30/09/2021</td>
+                                                <td class="area">David Miranda Tarco</td>
+                                                <td class="idProducto">David</td>
+                                                <td class="empresa">ARELI YAPE Soles</td>
+                                                <td class="empresa">Casa Andina</td>
+                                                <td class="totalReq" style="text-align:right;">500.00</td>
+                                                <td class="saldo" style="text-align:right;">100.00</td>
+                                                <td class="totalReq" style="text-align:right;">800.00</td>
+                                            <td>
+                                                <a href="http://127.0.0.1:8000/ticketreserva2pdf/1" target="_blank" > 
+                                                    <button type="button" class="btn btn-danger btn-md">
+                                                    <i class="fa fa-file fa-1x"></i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="edit" data-toggle="modal" data-contrato="'$dereq->id'"  data-target="#abrirmodal">
+                                                <button type="button" class="btn btn-info btn-md" >
+                                                    <i class="fa fa-edit fa-1x"></i>
+                                                </button> </a>&nbsp;
+                                            </td>
+                                        </tr>
+                                                                            </tbody>
+                                </table>
+                                    
+
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

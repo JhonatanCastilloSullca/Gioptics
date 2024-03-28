@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Caja Diaria Geovial</title>
+    <style>
+
+
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 0.5rem;
+            font-weight: normal;
+            line-height: .05;
+            color: #151b1e;   
+            writing-mode: tb-rl;
+            size:landscape;
+            width:100%;
+            height:100%;
+        
+        }
+        
+        .table {
+            display: table;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 0.3rem;
+            background-color: transparent;
+            border-collapse: collapse;
+        }
+        .table-bordered {
+            border: 1px solid #c2cfd6;
+        }
+        thead {
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        .table th, .table td {
+            padding: 0.3rem;
+            vertical-align: top;
+            border-top: 1px solid #c2cfd6;
+        }
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 1px solid #c2cfd6;
+        }
+        .table-bordered thead th, .table-bordered thead td {
+            border-bottom-width: 1px;
+        }
+        .table-bordered th, .table-bordered td {
+            border: 1px solid #c2cfd6;
+        }
+        th, td {
+            display: table-cell;
+            vertical-align: inherit;
+            line-height: 1.6;
+        }
+        th {
+            font-weight: bold;
+            text-align: -internal-center;
+            text-align: left;
+            line-height: 1.6;
+        }
+        tbody {
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+            line-height: 1.6;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .izquierda{
+            float:left;
+        }
+        .derecha{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="container-fluid">
+                <!-- Ejemplo de tabla Listado -->
+    <div class="card">
+        <div class="row">
+            <h1 style="text-align:center; font-size:28px"> Caja Bancos</h1>
+            <img class="derecha" style="padding-top:0; margin-top:0;" src="../public/img/geovial.png"  width="95px"  alt="admin@bootstrapmaster.com">
+            <h2 style="font-size:18px">Fecha: 01/05/2021 al 30/05/2021</h2>
+            <h3>Solicitado por: David </h3>
+            <div class="card-body">
+                <div style="overflow-x:auto;">
+                    <div class="table-responsive" >
+                        <h3> Egresos </h3>
+                        <table id="egresos" class="table table-bordered table-striped table-sm ">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Fecha</th>
+                                    <th>Cuenta</th>
+                                    <th>Responsable</th>
+                                    <th>Monto S/</th>
+                                    <th>Sustento</th>
+                                    <th>Numero</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">04/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">26</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">05/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">2688</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">06/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">651</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">CARMEN GOMEZ DEL ALAMO </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto"></td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">MAQUIVIAL INTERBANK Soles</td>
+                                    <td class="detalle">CARLOS PACHECO </td> 
+                                    <td class="monto" style="font-size:12px">6,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">86472819</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">YSRAEL MAMANI TAIRO </td> 
+                                    <td class="monto" style="font-size:12px">15,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">246</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">08/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">CARMEN GOMEZ DEL ALAMO </td> 
+                                    <td class="monto" style="font-size:12px">56,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">478</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">10/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">774</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">11/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">156</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">11/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">36,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL6</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">8,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/2B13</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">7,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/2B11</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">590</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">12,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">479</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">57</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">58</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">15/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">10,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL4</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">17/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">CARLOS PACHECO </td> 
+                                    <td class="monto" style="font-size:12px">9,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">247</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">18/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">YSRAEL MAMANI TAIRO </td> 
+                                    <td class="monto" style="font-size:12px">50,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">248</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">10,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">255</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">600.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">357</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">355</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">20/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">759</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">20/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL3</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">21/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">17,800.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">256</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">25/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">50,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">257</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">26/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">703</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">1,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">807</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">1,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">808</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">14,900.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">P0281128</td>
+                                </tr>
+
+                                                            
+                            </tbody>
+                        </table>
+                            
+
+                    </div>
+                </div>
+                <div style="overflow-x:auto;">
+                    <div class="table-responsive" >
+                        <h3> Egresos </h3>
+                        <table id="egresos" class="table table-bordered table-striped table-sm ">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Fecha</th>
+                                    <th>Cuenta</th>
+                                    <th>Responsable</th>
+                                    <th>Monto S/</th>
+                                    <th>Sustento</th>
+                                    <th>Numero</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">04/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">26</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">05/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">2688</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">06/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">651</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">CARMEN GOMEZ DEL ALAMO </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto"></td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">MAQUIVIAL INTERBANK Soles</td>
+                                    <td class="detalle">CARLOS PACHECO </td> 
+                                    <td class="monto" style="font-size:12px">6,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">86472819</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">07/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">YSRAEL MAMANI TAIRO </td> 
+                                    <td class="monto" style="font-size:12px">15,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">246</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">08/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">CARMEN GOMEZ DEL ALAMO </td> 
+                                    <td class="monto" style="font-size:12px">56,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">478</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">10/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">774</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">11/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">156</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">11/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">36,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL6</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">8,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/2B13</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">7,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/2B11</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">13/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">590</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">12,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">479</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">57</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">14/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">58</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">15/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">10,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL4</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">17/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">CARLOS PACHECO </td> 
+                                    <td class="monto" style="font-size:12px">9,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">247</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">18/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">YSRAEL MAMANI TAIRO </td> 
+                                    <td class="monto" style="font-size:12px">50,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">248</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">10,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">255</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">600.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">357</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">19/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">355</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">20/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">759</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">20/05/2021</td>
+                                    <td class="proveniente">GEOVIAL BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">B503/THL3</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">21/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">17,800.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">256</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">25/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">50,000.00</td>
+                                    <td class="monto">CHEQUE</td>
+                                    <td class="monto">257</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">26/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">3,000.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">703</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">1,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">807</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">1,500.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">808</td>
+                                </tr>
+
+                                                                
+                                <tr>
+                                    <td class="fecha">27/05/2021</td>
+                                    <td class="proveniente">GEOMAQ BBVA Soles</td>
+                                    <td class="detalle">IVAN DIEGO MAMANI FLORES </td> 
+                                    <td class="monto" style="font-size:12px">14,900.00</td>
+                                    <td class="monto">VOUCHER</td>
+                                    <td class="monto">P0281128</td>
+                                </tr>
+
+                                                            
+                            </tbody>
+                        </table>
+                            
+
+                    </div>
+                </div>
+                <div class="form-group row" >
+                    <div class="col-md-1">
+                    </div>
+                    <div class="table-responsive col-md-3" style="width:50%">
+                    <h3>Resumen Caja Soles </h3>
+                        <table class="table table-bordered table-striped table-sm ">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Detalle</th>
+                                    <th>Ingresos S/</th>
+                                    <th>Egresos S/</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ingresos</td>
+                                    <td style="text-align:right">329,658.96</td>
+                                    <td></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Egresos</td>
+                                    <td></td>
+                                    <td style="text-align:right">344,800.00</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right" colspan="2">Total Soles</td>
+                                    <td style="text-align:right">-15,141.04</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="table-responsive col-md-3" style="width:50%">
+                    <h3>Resumen Caja Dolares</h3>
+                        <table class="table table-bordered table-striped table-sm ">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Detalle</th>
+                                    <th>Ingresos S/</th>
+                                    <th>Egresos S/</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ingresos</td>
+                                    <td style="text-align:right">0.00</td>
+                                    <td></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Egresos en Dolares</td>
+                                    <td></td>
+                                    <td style="text-align:right">0.00</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:right" colspan="2">Total Dolares</td>
+                                    <td style="text-align:right">0.00</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                            
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
