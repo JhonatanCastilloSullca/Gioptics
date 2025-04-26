@@ -30,7 +30,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        DB::table('users')->insert(array('id'=>'1','nombre'=>'David','apellido'=>'Miranda Tarco','tipo_documento'=>'DNI','num_documento'=>'48507551','celular'=>'982733597','email'=>'dmirandatarco@gmail.com','rol'=>'Gerencia','usuario'=>'david','password'=>'$2y$10$NtFWYlOGWPewcw7NpC6wReaDkC6Z/7nMilspRUCbXmKJC6GTKbAou','idSucursal'=>1,'estado'=>'1','remember_token'=>NULL,'created_at'=>'2020-07-06 06:58:12','updated_at'=>'2022-04-12 14:54:26'));
         
     }
 

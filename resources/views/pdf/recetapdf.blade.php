@@ -174,7 +174,7 @@
 <body style="min-height: auto;">
     <div class="header">
 
-    <img src="../public/img/logo-gio.png" class="img-logo" alt="logo">
+    <img src="{{asset('img/logo-gstore.png')}}" class="img-logo" alt="logo">
         <div class="header-details">
             @foreach($medidas as $medida)
                 <div class="h-5"></div>
@@ -217,24 +217,24 @@
             </tbody>
         </table>
     </div>
-    <div class="content">
-        <table>
+    <div class="content" style="width: 100%">
+        <table style="width: 100%">
             <tbody>
                 @foreach($medidas as $medida)
                 <tr>
-                    <td style="width:20px !important" ></td>
-                    <td style="width:20px !important" id="ojos" colspan="3">Ojo Derecho</td>
-                    <td style="width:20px !important" id="ojos" colspan="3">Ojo Izquierdo</td>
+                    <td  ></td>
+                    <td  id="ojos" colspan="3">Ojo Derecho</td>
+                    <td  id="ojos" colspan="3">Ojo Izquierdo</td>
                 </tr>
                 <tr  class="estilotabla">
 
-                    <td style="width:20px"></td>
-                    <td style="width:20px">Esf.</td>
-                    <td style="width:20px">Cil.</td>
-                    <td style="width:20px">Eje</td>
-                    <td style="width:20px">Esf.</td>
-                    <td style="width:20px">Cel.</td>
-                    <td style="width:20px">Eje</td>
+                    <td ></td>
+                    <td >Esf.</td>
+                    <td >Cil.</td>
+                    <td >Eje</td>
+                    <td >Esf.</td>
+                    <td >Cel.</td>
+                    <td >Eje</td>
                 </tr>
                 <tr class="filaalta">
                     <td style="" class="">Vision de Lejos</td>

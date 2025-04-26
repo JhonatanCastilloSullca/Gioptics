@@ -136,7 +136,7 @@ class MedidaController extends Controller
         ->join('users as u','m.idUsuario','=','u.id')->join('sucursals as s','m.idSucursal','=','s.id')
         ->select('m.id','m.odvle','m.odvlc','m.odvleje','m.odvce','m.odvcc','m.odvceje','m.oivle','m.oivlc','m.oivleje','m.oivce',
         'm.oivcc','m.oivceje','m.dip','m.add','m.indicaciones','m.fecha','u.nombre as especialista','p.nombre as paciente','s.nombre as sucursal')
-        ->where('m.idPaciente','=',$id_paciente)->orderBy('m.id','desc')->get();
+        ->where('m.idPaciente','=',$id_paciente)->where('m.estado','Registrado')->orderBy('m.id','desc')->get();
         return view('medida.edit',["fechamedicion"=>$fechamedicion,"medidas"=>$medidas,"usuario"=>$usuario,"medidasanteriores"=>$medidasanteriores,"paciente"=>$paciente]);
     }
     public function show($id)
@@ -357,7 +357,9 @@ class MedidaController extends Controller
         DB::table('medidas')->where('id',$request->id_enviar)->update($medidas);
         broadcast(new MedidaUpdate($request->id_enviar));
         broadcast(new MedidaVenta($request->id_enviar));
-        return redirect()->to("medida/recetapdf/{$request->id_enviar}");
+        return redirect()->to("medida")
+        ->with('success', 'Guardado Correctamente.')
+        ->with('openPopup', route('receta.pdfrecta', $request->id_enviar));
     }
     public function destroy(Request $request)
     {

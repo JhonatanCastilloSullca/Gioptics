@@ -102,7 +102,7 @@
     <div class="card">
         <div class="row">
             
-            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="{{asset('img/logogo.png')}}"  width="120px"  alt="admin@bootstrapmaster.com">
+            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="{{asset('img/logo-gstore.png')}}"  width="120px"  alt="admin@bootstrapmaster.com">
             <h3 style="text-align:center; font-size:15px;color:#94c11f;"> Reporte de Historias</h3>
             <br>
             @if($sql5==0)

@@ -21,7 +21,6 @@ class CreateSucursalsTable extends Migration
             $table->string('estado',15);
             $table->timestamps();
         });
-        DB::table('sucursals')->insert(array('id'=>'1','nombre'=>'Principal','direccion'=>'','telefono'=>'','estado'=>'Activo'));
     }
 
     /**

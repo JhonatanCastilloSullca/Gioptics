@@ -42,9 +42,7 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    @foreach($usuario as $user)
-                        <span class="d-md-down-none">Usuario Activo: <b>{{$user->nombre}}</b> en: <b>{{$user->sucursal}}</b></span>
-                    @endforeach
+                    <span class="d-md-down-none">Usuario Activo: <b>{{\Auth::user()->nombre}}</b> en: <b>{{\Auth::user()->sucursal->nombre}}</b></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dropdown-header text-center">
@@ -132,8 +130,9 @@
     <script src="{{asset('js/bootstrap-toggle.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-autocomplete.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
-    @stack('scripts')
     @livewireScripts
+    @stack('scripts')
+    
 
       
 <script>

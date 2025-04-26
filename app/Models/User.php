@@ -46,5 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Compra','idUsuario','id');
     }
+
+    public function sucursal()
+    {
+        return $this->belongsTo(Sucursal::class,'idSucursal');
+    }
 }
 

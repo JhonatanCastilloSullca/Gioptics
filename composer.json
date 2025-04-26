@@ -9,14 +9,18 @@
         "barryvdh/laravel-dompdf": "^0.9.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "greenter/lite": "^5.0",
+        "greenter/report": "^5.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
         "league/mime-type-detection": "^1.9",
         "livewire/livewire": "^2.10",
+        "luecano/numero-a-letras": "^3.0",
         "maatwebsite/excel": "^3.1",
         "pusher/pusher-php-server": "^7.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "snapappointments/bootstrap-select": "^1.13"
     },
     "require-dev": {

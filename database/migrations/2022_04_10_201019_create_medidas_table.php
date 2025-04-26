@@ -42,8 +42,6 @@ class CreateMedidasTable extends Migration
             $table->string('estado',15);
             $table->timestamps();
         });
-
-        DB::table('medidas')->insert(array('id'=>'1','odvle'=>'1','odvlc'=>'2','odvleje'=>'3','odvce'=>'4','odvcc'=>'5','odvceje'=>'6','oivle'=>'7','oivlc'=>'8','oivleje'=>'9','oivce'=>'10','oivcc'=>'11','oivceje'=>'12','dip'=>'','add'=>'','indicaciones'=>'','fecha'=>'2022-04-19','idUsuario'=>'1','idVendedor'=>'1','idPaciente'=>'1','idSucursal'=>'1','estado'=>'Registrado'));
     }
 
     /**

@@ -142,7 +142,11 @@ window.Echo.channel('medidacreate')
 
 
 </script>  
-
+@if(session('openPopup'))
+    <script>
+        window.open("{{ session('openPopup') }}", "_blank");
+    </script>
+    @endif
 
 @endpush
 

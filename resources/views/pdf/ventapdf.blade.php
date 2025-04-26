@@ -163,7 +163,7 @@
     
     <div id="top" align='center'>
 		<div class="logo">
-			<img src="../public/img/logogo1.png" width="120px" alt="logo">
+			<img src="{{asset('img/logo-gstore.png')}}" width="120px" alt="logo">
 		</div>
       <div class="info cabecera"> 
         

@@ -87,7 +87,7 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('/medidasrealizadas','App\Http\Controllers\MedidaController@medidasrealizadas')->name('medidasrealizadas');
     Route::get('/medidasrealtime','App\Http\Controllers\MedidaController@prueba')->name('medidasrealtime');
     Route::get('/medidasventa','App\Http\Controllers\MedidaController@prueba2')->name('medidasventa');
-    Route::get('medida/recetapdf/{id}','App\Http\Controllers\MedidaController@recetapdf');
+    Route::get('medida/recetapdf/{id}','App\Http\Controllers\MedidaController@recetapdf')->name('receta.pdfrecta');
     Route::get('/ventapdf/{id}','App\Http\Controllers\VentaController@ventapdf');
     Route::get('/cajadiaria','App\Http\Controllers\CajaController@cajadiaria');
     Route::get('/ingreso','App\Http\Controllers\ReporteController@ingreso');
@@ -122,6 +122,13 @@ Route::group(['middleware'=>['auth']], function () {
     Route::get('deletepaciente/{id}','App\Http\Controllers\PacienteController@delete');
     Route::get('deletecliente/{id}','App\Http\Controllers\ClienteController@delete');
     Route::get('medida/editar/{id}','App\Http\Controllers\MedidaController@editar');
+    Route::get('facturacion/create','App\Http\Controllers\FacturacionController@create')->name('facturacion.create');
+    Route::get('facturacion/lista','App\Http\Controllers\FacturacionController@lista')->name('facturacion.lista');
+    Route::get('facturacion/ticketpdf/{ventaId}','App\Http\Controllers\FacturacionController@ticketpdf')->name('facturacion.ticketpdf');
+    Route::get('/descargar-xml/{id}', 'App\Http\Controllers\FacturacionController@descargarXml')->name('facturacion.xml');
+    Route::get('/facturacion/enviar/{venta}', 'App\Http\Controllers\FacturacionController@enviarfactura')->name('facturacion.enviarfactura');
+    Route::get('facturacion/reporte', 'App\Http\Controllers\FacturacionController@reporte')->name('facturacion.reporte');
+    Route::delete('/destroyfactura', 'App\Http\Controllers\FacturacionController@destroyfactura')->name('facturacion.destroyfactura');
     Route::patch('medida/guardareditar/{id}','App\Http\Controllers\MedidaController@guardareditar')->name('guardareditar');
 });
 

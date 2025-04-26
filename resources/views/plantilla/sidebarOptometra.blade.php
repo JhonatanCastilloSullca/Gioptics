@@ -102,6 +102,23 @@
 
                                 </ul>
                         </li>
+                        <li class="nav-item nav-dropdown">
+                                <a class="nav-link nav-dropdown-toggle"  href="#"><i class="fa fa-credit-card-alt "></i>Facturación</a>        
+                                <ul class="nav-dropdown-items">
+                                        <li class="nav-item" style="padding-left: 20px;">
+                                                <a class="nav-link" href="{{url('facturacion/create')}}" onclick="event.preventDefault(); document.getElementById('facturacion-create-form').submit();"><i class="fa fa-shopping-cart"></i>Crear</a>
+                                                <form id="facturacion-create-form" action="{{url('facturacion/create')}}" method="GET" style="display: none;">
+                                                {{csrf_field()}} 
+                                                </form>
+                                        </li>
+                                        <li class="nav-item" style="padding-left: 20px;">
+                                                <a class="nav-link" href="{{url('facturacion/lista')}}" onclick="event.preventDefault(); document.getElementById('facturacion-lista-form').submit();"><i class="fa fa-shopping-cart"></i>Lista</a>
+                                                <form id="facturacion-lista-form" action="{{url('facturacion/lista')}}" method="GET" style="display: none;">
+                                                {{csrf_field()}} 
+                                                </form>
+                                        </li>
+                                </ul>
+                        </li>
                 </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

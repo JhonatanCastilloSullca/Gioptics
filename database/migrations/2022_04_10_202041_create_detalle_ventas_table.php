@@ -17,11 +17,11 @@ class CreateDetalleVentasTable extends Migration
             $table->bigIncrements('id');
             $table->BigInteger('idVenta')-> unsigned();
             $table->foreign('idVenta')->references('id')->on('ventas');
-            $table->BigInteger('idProducto')-> unsigned();
+            $table->BigInteger('idProducto')-> unsigned()->nullable();
             $table->foreign('idProducto')->references('id')->on('productos');
-            $table->BigInteger('idMedidas')-> unsigned();
+            $table->BigInteger('idMedidas')->unsigned()->nullable();
             $table->foreign('idMedidas')->references('id')->on('medidas');
-            $table->string('especificacion',15,2)->nullable();
+            $table->string('especificacion',150)->nullable();
             $table->integer('cantidad');
             $table->decimal('precio',15,2);
             $table->timestamps();
