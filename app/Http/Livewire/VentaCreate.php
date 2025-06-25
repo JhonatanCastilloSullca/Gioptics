@@ -154,7 +154,7 @@ class VentaCreate extends Component
                     $this->mensaje="";
                 } else {
                     $this->mensaje ="";
-                    $this->nuevonombrerazon = $persona['nombre'];
+                    $this->nuevonombrerazon = $persona['nombres'];
                     $this->nuevodireccion = $persona['direccion'];
                 }
             } catch (RequestException $e) {
@@ -201,7 +201,7 @@ class VentaCreate extends Component
                 } else {
                     $this->mensaje ="";
 
-                    $this->nuevonombrerazon = $persona['nombre'];
+                    $this->nuevonombrerazon = $persona['nombres'];
                     $this->nuevodireccion = $persona['direccion'];
                 }
             } catch (RequestException $e) {

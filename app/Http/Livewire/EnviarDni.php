@@ -49,7 +49,7 @@ class EnviarDni extends Component
                             $this->mensaje="No se encontro datos";
                         }
                     } else {
-                        $razonsocial = $persona['nombre'];
+                        $razonsocial = $persona['nombres'];
                         $this->mensaje = '';
                     }
                 } catch (RequestException $e) {
