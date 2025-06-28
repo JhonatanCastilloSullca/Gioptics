@@ -164,6 +164,7 @@
     <div id="top" align='center'>
 		<div class="logo">
 			<img src="{{public_path('img/logo-gstore.png')}}" width="120px" alt="logo">
+			{{public_path('img/logo-gstore.png')}}
 		</div>
       <div class="info cabecera"> 
         
