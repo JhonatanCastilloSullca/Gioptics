@@ -174,7 +174,7 @@
 <body style="min-height: auto;">
     <div class="header">
 
-    <img src="{{public_path('img/logo-gstore.png')}}" class="img-logo" alt="logo">
+    <img src="{{public_path('img/logogstore.png')}}" class="img-logo" alt="logo">
         <div class="header-details">
             @foreach($medidas as $medida)
                 <div class="h-5"></div>
