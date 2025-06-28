@@ -163,7 +163,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="http://sistema.g-optics.com/img/logo-gstore.png" class="img-logo" alt="logo">
+        <img src="{{public_path('img/logo-gstore.png')}}" class="img-logo" alt="logo">
         <div class="header-details">
             <p class="header-details-text">RUC 10446103071</p>
             <p class="header-details-text">{{$venta->sucursal->direccion}}</p>
