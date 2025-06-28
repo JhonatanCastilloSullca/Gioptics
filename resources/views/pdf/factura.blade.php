@@ -164,6 +164,7 @@
 <body>
     <div class="header">
         <img src="{{public_path('img/logo-gstore.png')}}" class="img-logo" alt="logo">
+        {{public_path('img/logo-gstore.png')}}
         <div class="header-details">
             <p class="header-details-text">RUC 10446103071</p>
             <p class="header-details-text">{{$venta->sucursal->direccion}}</p>
