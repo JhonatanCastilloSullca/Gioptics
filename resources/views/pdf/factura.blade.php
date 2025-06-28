@@ -163,7 +163,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{asset('img/logogstore.png')}}" class="img-logo" alt="logo">
+        <img src="{{asset('img/logogstore.png')}}" class="img-logo" alt="logo">{{asset('img/logogstore.png')}}
         <div class="header-details">
             <p class="header-details-text">RUC 10446103071</p>
             <p class="header-details-text">{{$venta->sucursal->direccion}}</p>
