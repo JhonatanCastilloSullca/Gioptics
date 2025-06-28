@@ -102,7 +102,7 @@
     <div class="card">
         <div class="row">
             
-            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="{{public_path('img/logogstore.png')}}" width="100px"  alt="admin@bootstrapmaster.com">
+            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logogstore.png'))) }}" width="100px"  alt="admin@bootstrapmaster.com">
             <h3 style="text-align:center; font-size:15px;color:#94c11f;"> Reporte de Productos</h3>
             <br></br><br></br><br></br>
             <div class="card-body" style="margin-top:0.8rem;">

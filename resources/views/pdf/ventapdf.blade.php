@@ -163,7 +163,7 @@
     
     <div id="top" align='center'>
 		<div class="logo">
-			<img src="{{public_path('img/logogstore.png')}}" width="120px" alt="logo">
+			<img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logogstore.png'))) }}" width="120px" alt="logo">
 			
 		</div>
       <div class="info cabecera"> 

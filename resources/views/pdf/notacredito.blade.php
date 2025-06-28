@@ -162,7 +162,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{public_path('img/logogstore.png')}}" class="img-logo" alt="logo">
+        <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logogstore.png'))) }}" class="img-logo" alt="logo">
         <div class="header-details">
             <p class="header-details-text">RUC 10446103071</p>
             <p class="header-details-text">{{$venta->sucursal->direccion}}</p>

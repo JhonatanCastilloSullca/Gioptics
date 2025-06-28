@@ -101,7 +101,7 @@
     <div class="card">
         <div class="row">
             
-            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="{{public_path('img/logogstore.png')}}"  width="100px"  alt="admin@bootstrapmaster.com">
+            <img class="derecha" style="padding-top:0; margin-top:0; margin-right:1rem;" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('img/logogstore.png'))) }}"  width="100px"  alt="admin@bootstrapmaster.com">
             https://www.youtube.com/b72c4e0a-f844-4310-afe3-eab7ab18276
             <h3 style="text-align:center; font-size:15px;color:#94c11f;"> Reporte de Ventas</h3>
             <br>
