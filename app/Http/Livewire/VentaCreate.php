@@ -128,42 +128,65 @@ class VentaCreate extends Component
         $token = config('services.apisunat.token');
         $urldni = config('services.apisunat.urldni');
         $host = 'api.apis.net.pe';
-        if (gethostbyname($host) == $host) {
-            session()->flash('success', 'No hay conexión a Internet. Por favor, verifica tu conexión y vuelve a intentarlo.');
+        if (!preg_match('/^\d{8}$/', (string) $dni)) {
+            session()->flash('error', 'El DNI debe contener exactamente 8 dígitos.');
+
+            $this->numedoc1 = $dni;
+            $this->nuevonombrerazon = '';
+            $this->nuevodireccion = '';
             $this->mensaje = '';
+
         } else {
             try {
                 $response = Http::timeout(10)->withHeaders([
                     'Referer' => 'http://apis.net.pe/api-ruc'
                 ])->get($urldni . $dni);
-                $persona = ($response->json());
-                if (isset($persona['error']) || $persona == "") {
-                    $this->numedoc1 = $dni;
-                    if (isset($persona['error'])) {
 
-                        session()->flash('success', 'Se necesita 8 digitos');
-                        $this->nuevonombrerazon ="";
-                        $this->nuevodireccion = '';
-                        $this->mensaje ="";
-                    }
-                    if ($persona == "") {
-                        session()->flash('success', 'No se encontro datos');
-                        $this->mensaje="";
-                    }
-                    $this->mensaje="";
+                $persona = $response->json();
+
+                $this->numedoc1 = $dni;
+                $this->mensaje = '';
+
+                if (
+                    !$response->successful() ||
+                    !is_array($persona) ||
+                    isset($persona['error']) ||
+                    isset($persona['message']) ||
+                    empty($persona['nombre'])
+                ) {
+                    $this->nuevonombrerazon = '';
+                    $this->nuevodireccion = '';
+
+                    $mensajeError = is_array($persona)
+                        ? ($persona['message'] ?? $persona['error'] ?? 'No se encontraron datos para este DNI.')
+                        : 'No se encontraron datos para este DNI.';
+
+                    session()->flash('error', $mensajeError);
+
                 } else {
-                    $this->mensaje ="";
                     $this->nuevonombrerazon = $persona['nombre'];
-                    $this->nuevodireccion = $persona['direccion'];
+                    $this->nuevodireccion = $persona['direccion'] ?? '';
                 }
-            } catch (RequestException $e) {
-                if ($e->getCode() === CURLE_OPERATION_TIMEOUTED) {
-                    session()->flash('success', 'Se ha superado el límite de tiempo de la solicitud. Por favor, inténtalo de nuevo más tarde.');
-                    $this->mensaje = '';
-                } else {
-                    session()->flash('success', 'Ocurrió un error al consumir la API:');
-                    $this->mensaje = '';
-                }
+
+            } catch (\Illuminate\Http\Client\ConnectionException $e) {
+                $this->mensaje = '';
+                $this->nuevonombrerazon = '';
+                $this->nuevodireccion = '';
+
+                session()->flash(
+                    'error',
+                    'No se pudo conectar con el servicio de consulta DNI.'
+                );
+
+            } catch (\Exception $e) {
+                $this->mensaje = '';
+                $this->nuevonombrerazon = '';
+                $this->nuevodireccion = '';
+
+                session()->flash(
+                    'error',
+                    'Ocurrió un error al consultar el DNI.'
+                );
             }
         }
     }
@@ -174,42 +197,63 @@ class VentaCreate extends Component
         $urlruc = config('services.apisunat.urlruc');
         $host = 'api.apis.net.pe';
 
-        if (gethostbyname($host) == $host) {
-            session()->flash('success', 'No hay conexión a Internet. Por favor, verifica tu conexión y vuelve a intentarlo.');
+        if (!preg_match('/^\d{11}$/', (string) $ruc)) {
+            session()->flash('error', 'El RUC debe contener exactamente 11 dígitos.');
+
+            $this->nuevonombrerazon = '';
+            $this->nuevodireccion = '';
             $this->mensaje = '';
+
         } else {
             try {
                 $response = Http::timeout(10)->withHeaders([
                     'Referer' => 'http://apis.net.pe/api-ruc'
                 ])->get($urlruc . $ruc);
 
-                $persona = ($response->json());
+                $persona = $response->json();
 
-                if ($persona == "" || isset($persona['error'])) {
-                    $this->nuevonombrerazon = "";
+                $this->mensaje = '';
+
+                if (
+                    !$response->successful() ||
+                    !is_array($persona) ||
+                    isset($persona['error']) ||
+                    isset($persona['message']) ||
+                    empty($persona['nombre'])
+                ) {
+                    $this->nuevonombrerazon = '';
                     $this->nuevodireccion = '';
-                    if ($persona['error'] == "RUC invalido") {
-                        session()->flash('success', 'RUC invalido');
-                        $this->mensaje = '';
-                    }
-                    if ($persona['error'] == "RUC debe contener 11 digitos") {
-                        session()->flash('success', 'RUC debe contener 11 digitos');
-                        $this->mensaje = '';
-                    }
-                } else {
-                    $this->mensaje ="";
 
-                    $this->nuevonombrerazon = $persona['nombre'];
-                    $this->nuevodireccion = $persona['direccion'];
-                }
-            } catch (RequestException $e) {
-                if ($e->getCode() === CURLE_OPERATION_TIMEOUTED) {
-                    session()->flash('success', 'Se ha superado el límite de tiempo de la solicitud. Por favor, inténtalo de nuevo más tarde.');
-                    $this->mensaje = '';
+                    $mensajeError = is_array($persona)
+                        ? ($persona['message'] ?? $persona['error'] ?? 'No se encontraron datos para este RUC.')
+                        : 'No se encontraron datos para este RUC.';
+
+                    session()->flash('error', $mensajeError);
+
                 } else {
-                    session()->flash('success', 'Ocurrió un error al consumir la API:');
-                    $this->mensaje = '';
+                    $this->nuevonombrerazon = $persona['nombre'];
+                    $this->nuevodireccion = $persona['direccion'] ?? '';
                 }
+
+            } catch (\Illuminate\Http\Client\ConnectionException $e) {
+                $this->mensaje = '';
+                $this->nuevonombrerazon = '';
+                $this->nuevodireccion = '';
+
+                session()->flash(
+                    'error',
+                    'No se pudo conectar con el servicio de consulta RUC.'
+                );
+
+            } catch (\Exception $e) {
+                $this->mensaje = '';
+                $this->nuevonombrerazon = '';
+                $this->nuevodireccion = '';
+
+                session()->flash(
+                    'error',
+                    'Ocurrió un error al consultar el RUC.'
+                );
             }
         }
     }

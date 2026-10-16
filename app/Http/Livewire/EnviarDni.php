@@ -32,31 +32,33 @@ class EnviarDni extends Component
         }
         else{
             if (gethostbyname($host) == $host) {
-                session()->flash('success', 'No hay conexión a Internet. Por favor, verifica tu conexión y vuelve a intentarlo.');
+                session()->flash('error', 'No hay conexión a Internet. Por favor, verifica tu conexión.');
                 $this->mensaje = '';
             } else {
                 try {
                     $response = Http::timeout(10)->withHeaders([
                         'Referer' => 'http://apis.net.pe/api-ruc'
                     ])->get($urldni . $dni);
-                    $persona = ($response->json());
-                    if (isset($persona['error']) || $persona == "") {
-                        if (isset($persona['error'])) {
-                            $this->mensaje ="Se necesita 8 digitos";
-                        }
-                        if ($persona == "") {
-                            $this->mensaje="No se encontro datos";
-                        }
+
+                    $persona = $response->json();
+
+                    if (!$response->successful()) {
+                        $this->mensaje = $persona['message'] ?? 'Error al consultar el DNI';
+                    } elseif (isset($persona['error'])) {
+                        $this->mensaje = $persona['message'] ?? 'Error en la consulta';
+                    } elseif (isset($persona['message']) && !isset($persona['nombre'])) {
+                        $this->mensaje = $persona['message'];
+                    } elseif (!is_array($persona) || empty($persona['nombre'])) {
+                        $this->mensaje = 'No se encontraron datos para este DNI';
                     } else {
                         $razonsocial = $persona['nombre'];
                         $this->mensaje = '';
                     }
-                } catch (RequestException $e) {
-                    if ($e->getCode() === CURLE_OPERATION_TIMEOUTED) {
-                        $this->mensaje = '';
-                    } else {
-                        $this->mensaje = '';
-                    }
+
+                } catch (\Illuminate\Http\Client\ConnectionException $e) {
+                    $this->mensaje = 'No se pudo conectar con el servicio de consulta DNI.';
+                } catch (\Exception $e) {
+                    $this->mensaje = 'Ocurrió un error al consultar el DNI.';
                 }
             }
         }
